@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Cafe.Models.Product>
+
+@{
+    ViewData["Title"] = "All Products";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">All Products</h1>
+
+    <p class="text-center">
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </p>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover mx-auto">
+            <thead class="thead-dark">
+                <tr>
+                    <th class="text-center">Image</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Price</th>
+                    <th class="text-center">Description</th>
+                    <th class="text-center">Is Available</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="text-center">
+                        <td>
+                            <img src="~/images/@item.Image" alt="Product Image" width="100" height="100" class="img-thumbnail rounded-circle" />
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                        <td>@Html.DisplayFor(modelItem => item.IsAvalible)</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

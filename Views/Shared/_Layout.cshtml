@@ -1,0 +1,97 @@
+﻿@{
+    // var user = ViewBag.UserModel as User;
+    var user = (User?)Context.Items["User"];
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title - Cafe</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <style>
+        body {
+        }
+        .navbar {
+            background-color: #212529;
+            border-color: #212529;
+        }
+        .navbar .navbar-brand,
+        .navbar .nav-link {
+            color: #ffffff;
+        }
+        .nav-link:hover {
+            color: #f8f9fa;
+        }
+        .navbar .nav-link.active {
+            color: #007bff;
+        }
+        .container {
+            padding-top: 2rem;
+        }
+    </style>
+    @RenderSection("styles", required: false)
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Cafe</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="~/">Home</a>                    
+                </li>
+                @if (user != null)
+                {
+                <li class="nav-item">
+                        @if(user.Role == Cafe.Enums.Role.ADMIN)
+                        {
+                            <a class="nav-link" href="~/reservationtables">All Reserves</a>
+                        }
+                        else
+                        {
+                            <a class="nav-link" href="~/reservationtables">My Reserves</a>
+                        }
+
+                </li>
+                
+                    if(user.Role == Cafe.Enums.Role.ADMIN)
+                    {
+                        
+                    
+                    <li class="nav-item">
+
+                    <a class="nav-link" href="~/users">Users</a>
+                </li>
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="~/products">Products</a>
+                        </li>
+                }}
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                @if (user != null)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/users/logout">Log Out</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/users/Login">Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/users/Register">Register</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        @RenderBody()
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿body {
+}
+/* Add your custom styles here */
+
+/* Optional: Add a bit of spacing to the card and center it */
+.card {
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+/* Optional: Style the card title */
+.card-title {
+    color: #333;
+}
+
+/* Optional: Add some padding between rows in the definition list */
+
+h1.mb-4 {
+    display: flex;
+    align-items: center;
+}
+
+/* Circular image styling */
+h1 img {
+    border-radius: 50%;
+    margin-right: 10px; /* Add some space between the image and text */
+}
+
+/* Optional: Add margin to the dl for better spacing */
+dl.row {
+    margin-bottom: 20px;
+}
+
+/* Optional: Style the labels in the definition list */
+dt {
+    font-weight: bold;
+}
+
+/* Optional: Style the image to have a border radius */
+.img-thumbnail {
+    border-radius: 8px;
+}
+
+/* Optional: Center the buttons */
+.text-center-buttons {
+    text-align: center;
+}
+
+/* Optional: Add spacing around the buttons */
+.text-center-buttons a {
+    margin: 0 5px;
+}

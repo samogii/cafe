@@ -1,0 +1,41 @@
+﻿@model Cafe.Models.Product
+
+@{
+    var user = ViewBag.UserModel as User;
+    ViewData["Title"] = "Details";
+    
+}
+
+<div class="container mt-7 ">
+
+    <div class="card mb-6">
+        <img class="rounded-circle" src="~/images/@Model.Image" alt="Product Image" height="500">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Name:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Name)</dd>
+
+                <dt class="col-sm-3">Price:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Price)</dd>
+
+                <dt class="col-sm-3">Description:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Description)</dd>
+
+                <dt class="col-sm-3">Is Available:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.IsAvalible)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-3 text-center text-center-buttons">
+        @if (user != null && user.Role == Cafe.Enums.Role.ADMIN)
+        {
+            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">Edit</a>
+            <a asp-controller="Products" asp-action="Index" class="btn btn-secondary">Back to List</a>
+        }
+        else{
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Back to List</a>
+        }
+        
+    </div>
+</div>

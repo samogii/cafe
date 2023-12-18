@@ -1,0 +1,10 @@
+{
+  "app": "samcafe",
+  "port": 80,
+  "disks": [
+    {
+      "name": "disk",
+      "mountTo": "wwwroot"
+    }
+  ]
+}

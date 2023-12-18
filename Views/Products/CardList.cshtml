@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Cafe.Models.Product>
+<style>
+    .card {
+        transition: transform 0.7s;
+        background-color: #d6d6d6
+    }
+
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .card .card-body .details {
+            transform: rotateY(-180deg);
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #aaaaaa;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .card:hover .card-body .details {
+            display: inline;
+        }
+
+</style>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Menu</h1>
+    <div class="row">
+    @foreach (var item in Model.Select((value, i) => new { i, value }))
+    {
+        @* var index = Model.IndexOf(item); *@
+        {
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="~/images/@item.value.Image" alt="Product Image" class="card-img img-thumbnail" style=" max-height: 200px;">
+                        <div class="card-body">
+                            <h5 class="card-title text-truncate">Name : @Html.DisplayFor(modelItem => item.value.Name)</h5>
+                            <h6 class="card-text text-truncate">Price : @Html.DisplayFor(modelItem => item.value.Price)</h6>
+                            <div class="position-absolute p-2" style="bottom: 1rem; left: 50%; transform: translateX(-50%);">
+                                <button type="button" class="btn btn-link text-dark fs--4" data-bs-toggle="tooltip" title="Show details">
+                                    <i class="fa fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                            <div class="details">
+                                <p>Additional Information:</p>
+                                <p>@Html.DisplayFor(modelItem => item.value.Description)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        }
+    }
+    </div>
+</div>
+
