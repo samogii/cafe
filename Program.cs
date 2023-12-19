@@ -12,12 +12,8 @@ var services = builder.Services;
 var env = builder.Environment;
 var config = builder.Configuration;
 var local = builder.Configuration.GetConnectionString("localsql");
-var sql = builder.Configuration.GetConnectionString("sql");
-
-if (env.IsDevelopment())
-    services.AddDbContext<DataContext>(x => x.UseSqlServer(local));
-else
-    services.AddDbContext<DataContext>(x => x.UseSqlServer(sql));
+    
+services.AddDbContext<DataContext>(x => x.UseSqlServer(local));
 
 services.AddTransient<IJwtUtils, JwtUtils>();
 services.AddScoped<Cafe.Models.User>();

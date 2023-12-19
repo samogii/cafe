@@ -79,7 +79,6 @@ namespace Cafe.Controllers
         {
             if (!_context.Users.Any(x => x.Email == user.Email))
             {
-                _context.Add(user);
                 var newUser = new User(user.Email, user.Password , user.UserName);
                 _context.Add(newUser);
                 await _context.SaveChangesAsync();
@@ -103,8 +102,6 @@ namespace Cafe.Controllers
         {
             if (!_context.Users.Any(x=>x.Email == user.Email))
             {
-
-                _context.Add(user);
                 var newUser = new User(user.Email, user.Password, user.UserName);
                 _context.Add(newUser);
                 await _context.SaveChangesAsync();
