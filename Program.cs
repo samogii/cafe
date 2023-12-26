@@ -30,7 +30,27 @@ services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).Ad
 });
 
 
+var serviceProvider = new ServiceCollection()
+                .AddDbContext<DataContext>(options =>
+                    options.UseSqlServer(sql))
+                .BuildServiceProvider();
 
+// Get an instance of your DbContext from the service provider
+using (var scope = serviceProvider.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<DataContext>();
+
+    try
+    {
+        // Apply pending migrations
+        dbContext.Database.Migrate();
+    }
+    catch (Exception ex)
+    {
+        // Handle migration errors
+        Console.WriteLine($"Error applying migrations: {ex.Message}");
+    }
+}
 
 services.AddControllersWithViews();
 

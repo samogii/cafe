@@ -254,3 +254,4 @@ C:\Users\sami2\Desktop\Cafe\Cafe\bin\Debug\net8.0\runtimes\win\lib\net7.0\System
 C:\Users\sami2\Desktop\Cafe\Cafe\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 C:\Users\sami2\Desktop\Cafe\Cafe\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\sami2\Desktop\Cafe\Cafe\bin\Debug\net8.0\liara.json
+C:\Users\sami2\Desktop\Cafe\Cafe\obj\Debug\net8.0\Cafe.sourcelink.json
