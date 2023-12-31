@@ -30,6 +30,12 @@
 
 <div class="container mt-5">
     <h1 class="text-center mb-4">Menu</h1>
+    <form method="get" action="@Url.Action("Index", "Home")">
+        <div class="mb-3">
+            <input type="text" name="searchQuery" class="form-control" placeholder="Search by name">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
     <div class="row">
     @foreach (var item in Model.Select((value, i) => new { i, value }))
     {

@@ -4,6 +4,5 @@
     {
         USER,
         ADMIN,
-        
     }
 }

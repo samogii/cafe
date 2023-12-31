@@ -12,12 +12,8 @@ var services = builder.Services;
 var env = builder.Environment;
 var config = builder.Configuration;
 var local = builder.Configuration.GetConnectionString("localsql");
-var sql = builder.Configuration.GetConnectionString("sql");
-
-if (env.IsDevelopment())
-    services.AddDbContext<DataContext>(x => x.UseSqlServer(local));
-else
-    services.AddDbContext<DataContext>(x => x.UseSqlServer(sql));
+    
+services.AddDbContext<DataContext>(x => x.UseSqlServer(local));
 
 services.AddTransient<IJwtUtils, JwtUtils>();
 services.AddScoped<Cafe.Models.User>();
@@ -30,27 +26,27 @@ services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).Ad
 });
 
 
-var serviceProvider = new ServiceCollection()
-                .AddDbContext<DataContext>(options =>
-                    options.UseSqlServer(sql))
-                .BuildServiceProvider();
+//var serviceProvider = new ServiceCollection()
+//                .AddDbContext<DataContext>(options =>
+//                    options.UseSqlServer(local))
+//                .BuildServiceProvider();
 
-// Get an instance of your DbContext from the service provider
-using (var scope = serviceProvider.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<DataContext>();
+//// Get an instance of your DbContext from the service provider
+//using (var scope = serviceProvider.CreateScope())
+//{
+//    var dbContext = scope.ServiceProvider.GetRequiredService<DataContext>();
 
-    try
-    {
-        // Apply pending migrations
-        dbContext.Database.Migrate();
-    }
-    catch (Exception ex)
-    {
-        // Handle migration errors
-        Console.WriteLine($"Error applying migrations: {ex.Message}");
-    }
-}
+//    try
+//    {
+//        // Apply pending migrations
+//        dbContext.Database.Migrate();
+//    }
+//    catch (Exception ex)
+//    {
+//        // Handle migration errors
+//        Console.WriteLine($"Error applying migrations: {ex.Message}");
+//    }
+//}
 
 services.AddControllersWithViews();
 

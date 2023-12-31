@@ -21,12 +21,32 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\sami2\\Desktop\\Cafe\\Cafe\\wwwroot\\images\\0bd6075a-5aaa-4571-9245-7fb0df4f897d_Cappuccino_at_Sightglass_Coffee.jpg",
+      "PackagePath": "staticwebassets\\images\\0bd6075a-5aaa-4571-9245-7fb0df4f897d_Cappuccino_at_Sightglass_Coffee.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sami2\\Desktop\\Cafe\\Cafe\\wwwroot\\images\\414ee6d1-dd9b-49f1-aaa4-57e2539e9800_download.jpg",
+      "PackagePath": "staticwebassets\\images\\414ee6d1-dd9b-49f1-aaa4-57e2539e9800_download.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sami2\\Desktop\\Cafe\\Cafe\\wwwroot\\images\\88793a04-d378-44c9-bf83-64355f83e20c_images.jpg",
+      "PackagePath": "staticwebassets\\images\\88793a04-d378-44c9-bf83-64355f83e20c_images.jpg"
+    },
+    {
       "Id": "C:\\Users\\sami2\\Desktop\\Cafe\\Cafe\\wwwroot\\images\\c3477584-abb2-41d7-b1cb-3c74094feaf8_8846520858976888215.jpg",
       "PackagePath": "staticwebassets\\images\\c3477584-abb2-41d7-b1cb-3c74094feaf8_8846520858976888215.jpg"
     },
     {
       "Id": "C:\\Users\\sami2\\Desktop\\Cafe\\Cafe\\wwwroot\\images\\c8c7c6dc-a0ea-4305-8f75-539090eb7e62_ypbpndwlrjdbnqkgnxlvktouttqlgway.png",
       "PackagePath": "staticwebassets\\images\\c8c7c6dc-a0ea-4305-8f75-539090eb7e62_ypbpndwlrjdbnqkgnxlvktouttqlgway.png"
+    },
+    {
+      "Id": "C:\\Users\\sami2\\Desktop\\Cafe\\Cafe\\wwwroot\\images\\e2a5baf3-9850-4549-9f7c-ff271636b9d0_Cappuccino_at_Sightglass_Coffee.jpg",
+      "PackagePath": "staticwebassets\\images\\e2a5baf3-9850-4549-9f7c-ff271636b9d0_Cappuccino_at_Sightglass_Coffee.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sami2\\Desktop\\Cafe\\Cafe\\wwwroot\\images\\eaf80593-5be1-4684-bed6-5469cecaf2ee_wall.jpg",
+      "PackagePath": "staticwebassets\\images\\eaf80593-5be1-4684-bed6-5469cecaf2ee_wall.jpg"
     },
     {
       "Id": "C:\\Users\\sami2\\Desktop\\Cafe\\Cafe\\wwwroot\\js\\site.js",

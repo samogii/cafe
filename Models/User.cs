@@ -44,7 +44,6 @@ namespace Cafe.Models
         public User GetId(int id)
         {
             return _context.Users.First(x=>x.Id == id);
-
         }
     }
 

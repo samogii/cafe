@@ -18,11 +18,16 @@ namespace Cafe.Controllers
             _dataContext = dataContext;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string? searchQuery)
         {
             var user = (User?)HttpContext.Items["User"];
             ViewBag.UserModel = user;
-            return View("~/Views/Products/CardList.cshtml",  _dataContext.Products.ToList());
+            var products = _dataContext.Products.ToList();
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                products = products.Where(p => p.Name.Contains(searchQuery)).ToList();
+            }
+            return View("~/Views/Products/CardList.cshtml",  products);
         }
 
         public IActionResult Privacy()
